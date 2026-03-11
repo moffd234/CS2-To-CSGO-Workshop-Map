@@ -10,9 +10,19 @@ DEFAULT_CSGO_DIRECTORY = r"C:\Program Files (x86)\Steam\steamapps\common\csgo le
 
 
 def unzip_and_move(zip_path: str, new_directory: str) -> None:
-    with ZipFile(zip_path, "r") as zObject:
-        zObject.extractall(new_directory)
-        os.remove(zip_path)
+    try:
+        with ZipFile(zip_path, "r") as zObject:
+            zObject.extractall(new_directory)
+            os.remove(zip_path)
+    except PermissionError:
+        print(f"Error extracting zip file at {zip_path}. Check if the file is in use")
+
+    finally:
+        try:
+            os.remove(zip_path)
+        except PermissionError:
+            print(f"Error deleting zip file at {zip_path}")
+
 
 
 def rename_files_and_move(parent_directory: str, dst_directory: str) -> None:
