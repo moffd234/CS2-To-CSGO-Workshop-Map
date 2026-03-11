@@ -3,9 +3,9 @@ import shutil
 from argparse import ArgumentParser, Namespace
 from zipfile import ZipFile
 
-STEAM_APPS_DIRECTORY = r"C:\steamapps\Program Files (x86)\Steam\steamapps"
+STEAM_APPS_DIRECTORY = r"C:\Program Files (x86)\Steam\steamapps"
 DEFAULT_CS2_DIRECTORY = STEAM_APPS_DIRECTORY + r"\workshop\content\730"
-DEFAULT_CSGO_DIRECTORY = r"C:\common\csgo legacy\csgo\maps"
+DEFAULT_CSGO_DIRECTORY = r"\common\csgo legacy\csgo\maps"
 
 
 def main() -> None:
