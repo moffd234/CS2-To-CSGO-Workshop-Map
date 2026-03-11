@@ -1,5 +1,6 @@
 import os
 import shutil
+import time
 from argparse import ArgumentParser, Namespace
 from zipfile import ZipFile
 
@@ -26,13 +27,16 @@ def main() -> None:
 
     if not os.path.exists(parent_directory):
         print("ERROR: Source directory (CS2 directory) does not exist. Exiting")
+        time.sleep(5)
         return
 
     if not os.path.exists(dst_directory):
         print("ERROR: Destination directory (CSGO Legacy maps directory) does not exist. Exiting")
+        time.sleep(5)
         return
 
     rename_files_and_move(parent_directory, dst_directory)
+    time.sleep(5)
     print("Finished moving maps... exiting")
 
 
