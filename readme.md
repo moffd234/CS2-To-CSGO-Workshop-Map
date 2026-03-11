@@ -5,6 +5,7 @@ This copies `.bin` workshop map files from CS2 and extracts them into your CSGO 
 ---
 
 ## Usage
+Make sure both versions of Counter Strike are closed before starting.
 
 ### 1. Default Folder Locations
 

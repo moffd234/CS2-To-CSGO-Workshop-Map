@@ -62,17 +62,17 @@ def main() -> None:
 
     if not os.path.exists(parent_directory):
         print("ERROR: Source directory (CS2 directory) does not exist. Exiting")
-        time.sleep(10)
+        input("Press enter to exit")
         return
 
     if not os.path.exists(dst_directory):
         print("ERROR: Destination directory (CSGO Legacy maps directory) does not exist. Exiting")
-        time.sleep(10)
+        input("Press enter to exit")
         return
 
     rename_files_and_move(parent_directory, dst_directory)
-    time.sleep(10)
-    print("Finished moving maps... exiting")
+    print("Finished moving maps...")
+    input("Press enter to exit")
 
 
 if __name__ == "__main__":
