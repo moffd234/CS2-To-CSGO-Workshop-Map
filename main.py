@@ -13,7 +13,7 @@ def unzip_and_move(zip_path: str, new_directory: str) -> None:
     try:
         with ZipFile(zip_path, "r") as zObject:
             zObject.extractall(new_directory)
-            os.remove(zip_path)
+            print(f"Extracted {zip_path}")
     except PermissionError:
         print(f"Error extracting zip file at {zip_path}. Check if the file is in use")
 
@@ -21,7 +21,7 @@ def unzip_and_move(zip_path: str, new_directory: str) -> None:
         try:
             os.remove(zip_path)
         except PermissionError:
-            print(f"Error deleting zip file at {zip_path}")
+            print(f"***Error*** \n error deleting zip file at {zip_path}")
 
 
 
@@ -62,16 +62,16 @@ def main() -> None:
 
     if not os.path.exists(parent_directory):
         print("ERROR: Source directory (CS2 directory) does not exist. Exiting")
-        time.sleep(5)
+        time.sleep(10)
         return
 
     if not os.path.exists(dst_directory):
         print("ERROR: Destination directory (CSGO Legacy maps directory) does not exist. Exiting")
-        time.sleep(5)
+        time.sleep(10)
         return
 
     rename_files_and_move(parent_directory, dst_directory)
-    time.sleep(5)
+    time.sleep(10)
     print("Finished moving maps... exiting")
 
 
